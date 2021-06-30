@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
+use App\Models\RealEstate;
 
 class HomeController extends Controller
 {
@@ -15,8 +16,8 @@ class HomeController extends Controller
      */
     public function listRealEstate()
     {
-        $realEstatesList = null;
-        return view('realestate.index');
+        $realEstatesList = RealEstate::all();
+        return view('realestate.index')->with('realEstateList', $realEstatesList);
     }
 
     /**
