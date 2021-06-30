@@ -28,7 +28,8 @@ class HomeController extends Controller
      */
     public function getRealEstate($id)
     {
-        return view('realestate.details');
+        $realEstate = RealEstate::find($id);
+        return view('realestate.details')->with('realEstate', $realEstate);
     }
 
     /**

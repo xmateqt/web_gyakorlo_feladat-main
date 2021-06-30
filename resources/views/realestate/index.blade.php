@@ -19,8 +19,7 @@ Created at: 2021.03.24.
                         
 
                         <div class="col-8">
-                            <h5 class="pb-3">{{$realEstate->name}}</h5>
-                            <p>{{$realEstate->description}}</p>
+                            <h5 class="pb-3"><a href="/get-real-estate/{{$realEstate->id}}">{{$realEstate->name}}</a></h5>
                             <p>{{$realEstate->address}}, {{$realEstate->type}}</p>
                             <p>Ár: {{$realEstate->price}} Ft</p>
                         </div>
