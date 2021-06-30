@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function listRealEstate()
     {
-        $realEstatesList = RealEstate::all();
+        $realEstatesList = RealEstate::orderBy('created_at', 'desc')->paginate(5);
         return view('realestate.index')->with('realEstateList', $realEstatesList);
     }
 

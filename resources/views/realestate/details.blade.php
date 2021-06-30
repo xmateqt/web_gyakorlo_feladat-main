@@ -11,7 +11,7 @@ Created at: 2021.03.24.
         <div class="jumbotron">
             <h3 class="text-center mb-5">Ingatlan részletek</h3>
 
-                    <div class="well row">
+                    <div class="row">
 
                         <div class="col-8">
                             <h4 class="pb-3">Ingatlan neve: {{$realEstate->name}}</h5>

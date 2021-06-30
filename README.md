@@ -1,5 +1,8 @@
 # Gyakorló/beugró feladat
 
+v0.0.4
+Pagination
+
 v0.0.3
 Single ingatlan page
 
