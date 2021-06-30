@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\RealEstate;
+use App\Models\RealEstateType;
 
 class HomeController extends Controller
 {
@@ -50,5 +51,10 @@ class HomeController extends Controller
     public function deleteRealEstate($id)
     {
 
+    }
+
+    public static function listRealEstateTypes() {
+        $realEstateTypeList = RealEstateType::all();
+        return $realEstateTypeList;
     }
 }

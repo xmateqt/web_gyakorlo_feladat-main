@@ -30,6 +30,8 @@ Created at: 2021.03.24.
 
 
                     </div>
+                    <a href="/update-real-estate/{{$realEstate->id}}" class="btn btn-outline-primary">Módosítás</a>
+
                     <hr>
                 @endforeach
                 {{$realEstateList->links("pagination::bootstrap-4")}}
