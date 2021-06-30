@@ -1,6 +1,5 @@
 # Gyakorló/beugró feladat
 
-
 v0.0.3
 Single ingatlan page
 
