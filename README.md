@@ -1,5 +1,8 @@
 # Gyakorló/beugró feladat
 
+v1.0.2
+.env file gitignore-ból kiszedve
+
 v1.0.1
 DB file hozzáadva a database\laravel.sql útvonalra
 
