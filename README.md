@@ -1,6 +1,7 @@
 # Gyakorló/beugró feladat
 
-TODO: validációs tesztek
+v1.0.0
+Validációk lefejlesztve, a beépített függvényt nem tudtam használni hozzá -- HomeController::addRealEstate-ben részletesebben, validációk ellenőrizve, validációs üzenetek lefordítva magyarra
 
 v0.1.0
 Reszponzív bootstrap oszlopok, stilizált gombok

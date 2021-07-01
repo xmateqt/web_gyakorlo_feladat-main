@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use App\Models\RealEstate;
 use App\Models\RealEstateType;
 
@@ -40,15 +41,27 @@ class HomeController extends Controller
      */
     public function updateRealEstate(Request $request)
     {
-         $validator = new Validator($request->all(), [
+
+        /*
+             $validator = new Validator($request->all(), [
+                'name' => 'required',
+                'description' => 'required',
+                'address' => 'required',
+                'price' => 'required',
+                'type' => 'required',
+                'image' => 'image|nullable|max:1999'
+            ]);
+        */
+
+        $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
             'address' => 'required',
-            'price' => 'required',
-            'type' => 'required',
+            'price' => 'required|numeric',
+            'type' => 'required|not_in:0',
             'image' => 'image|nullable|max:1999'
         ]);
-
+        
         $realEstate = RealEstate::find($request->input('id'));
 
         if($request->hasFile('image')){
@@ -79,12 +92,34 @@ class HomeController extends Controller
 
     public function addRealEstate(Request $request) {
 
-        $validator = new Validator($request->all(), [
+      // $validator = new Validator($request->all(), [
+        /*$validator = Validator::make($request->all(), [
             'name' => 'required',
             'description' => 'required',
             'address' => 'required',
-            'price' => 'required',
-            'type' => 'required',
+            'price' => 'required|numeric',
+            'type' => 'required|not_in:0',
+            'image' => 'image|nullable|max:1999'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/')->with('alert','nemjó');
+        }
+
+
+        Ezt a kódot itt hagyom, nem tudom miért nem működött, olvastam neten, hogy sokaknak baja volt a ->fails() beépített függvénnyel,
+        hiába importálták be a különböző könyvtárakat, vagy írták át a config fájlokat. Próbáltam én is ezeket, illetve újratelepíteni a
+        csomagokat, de nem akart sehogy sem működni így a validáció. Ezért máshogy írtam meg lentebb. Ez ugyanígy nem működött az update-
+        ben sem.
+        */
+
+
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'address' => 'required',
+            'price' => 'required|numeric',
+            'type' => 'required|not_in:0',
             'image' => 'image|nullable|max:1999'
         ]);
 
