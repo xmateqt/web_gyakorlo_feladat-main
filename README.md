@@ -1,5 +1,8 @@
 # Gyakorló/beugró feladat
 
+v0.0.8
+Képfeltöltés és képvalidációk beállítása új ingatlanhoz és módosításhoz
+
 v0.0.7
 Új ingatlan hozzáadása oldal és funkció hozzáadva, //todo - kép feltöltés
 

@@ -46,6 +46,7 @@ class HomeController extends Controller
             'address' => 'required',
             'price' => 'required',
             'type' => 'required',
+            'image' => 'image|nullable|max:1999'
         ]);
 
       /* if ($validator->fails()) {
@@ -53,6 +54,19 @@ class HomeController extends Controller
         } */
 
         $realEstate = RealEstate::find($request->input('id'));
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $fileNameWithExt = $request->file('image')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $fileExtension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'.'.$fileExtension;
+            //$path = $request->file('image')->store('images', ['disk' => 'public'], $fileNameToStore);
+            $path = public_path().'/images';
+            $upload = $file->move($path,$fileNameToStore);
+            $realEstate->img_uri = '/images/'.$fileNameToStore;
+        }
+        
         $realEstate->name = $request->input('name');
         $realEstate->description = $request->input('description');
         $realEstate->address = $request->input('address');
@@ -75,7 +89,21 @@ class HomeController extends Controller
             'address' => 'required',
             'price' => 'required',
             'type' => 'required',
+            'image' => 'image|nullable|max:1999'
         ]);
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $fileNameWithExt = $request->file('image')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $fileExtension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'.'.$fileExtension;
+            //$path = $request->file('image')->store('images', ['disk' => 'public'], $fileNameToStore);
+            $path = public_path().'/images';
+            $upload = $file->move($path,$fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.png';
+        }
 
         $realEstate = new RealEstate;
         $realEstate->name = $request->input('name');
@@ -83,7 +111,7 @@ class HomeController extends Controller
         $realEstate->address = $request->input('address');
         $realEstate->price = $request->input('price');
         $realEstate->type = $request->input('type');
-        $realEstate->img_uri = "#";
+        $realEstate->img_uri = '/images/'.$fileNameToStore;
         $realEstate->save();
         return redirect('/')->with('success_message', 'Ingatlan sikeresen hozzáadva');
     }

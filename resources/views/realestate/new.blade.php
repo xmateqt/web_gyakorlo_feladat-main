@@ -8,7 +8,7 @@
 
 
 
-                <form method="POST" action="{{url('add-real-estate')}}" id="add-real-estate">
+                <form method="POST" action="{{url('add-real-estate')}}" id="add-real-estate" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">Név</label>
@@ -39,11 +39,18 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>
+                    </div><br>
                     <div class="form-group row">
                         <label for="price" class="col-sm-2 col-form-label">Ár</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="price" name="price" placeholder="Ingatlan ára (Ft-ban)"><br>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="image" class="col-sm-2 col-form-label">Kép</label>
+                        <div class="col-sm-10 custom-file">
+                        	<label class="custom-file-label" for="image">Kép feltöltése</label>
+                            <input type="file" class="custom-file-control" id="image" name="image"><br>
                         </div>
                     </div>
                     <input type="submit" value="Mentés" class="btn btn-outline-primary"><br><br>         

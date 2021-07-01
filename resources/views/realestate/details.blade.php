@@ -25,8 +25,10 @@ Created at: 2021.03.24.
                         </div>
                     </div>
 
+                    <br><br>
 
-                <form method="POST" action="{{url('update-real-estate')}}" id="update-real-estate">
+
+                <form method="POST" action="{{url('update-real-estate')}}" id="update-real-estate" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" id="id" name="id" value="{{$realEstate->id}}">
                     <div class="form-group row">
@@ -67,6 +69,13 @@ Created at: 2021.03.24.
                         <label for="price" class="col-sm-2 col-form-label">Ár</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="price" name="price"  value="{{$realEstate->price}}" placeholder="Ingatlan ára (Ft-ban)"><br>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="image" class="col-sm-2 col-form-label">Kép</label>
+                        <div class="col-sm-10 custom-file">
+                            <label class="custom-file-label" for="image">Kép feltöltése</label>
+                            <input type="file" class="custom-file-control" id="image" name="image"><br>
                         </div>
                     </div>
                     <input type="submit" value="Mentés" class="btn btn-outline-primary"><br><br>
