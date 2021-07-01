@@ -1,5 +1,8 @@
 # Gyakorló/beugró feladat
 
+v1.0.1
+DB file hozzáadva a database\laravel.sql útvonalra
+
 v1.0.0
 Validációk lefejlesztve, a beépített függvényt nem tudtam használni hozzá -- HomeController::addRealEstate-ben részletesebben, validációk ellenőrizve, validációs üzenetek lefordítva magyarra
 
