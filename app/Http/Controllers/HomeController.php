@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use App\Models\RealEstate;
 use App\Models\RealEstateType;
 
@@ -40,7 +40,26 @@ class HomeController extends Controller
      */
     public function updateRealEstate(Request $request)
     {
-        $validator = new Validator($request->all(), []);
+         $validator = new Validator($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+            'address' => 'required',
+            'price' => 'required',
+            'type' => 'required',
+        ]);
+
+      /* if ($validator->fails()) {
+            return redirect('#')->withErrors($validator);
+        } */
+
+        $realEstate = RealEstate::find($request->input('id'));
+        $realEstate->name = $request->input('name');
+        $realEstate->description = $request->input('description');
+        $realEstate->address = $request->input('address');
+        $realEstate->price = $request->input('price');
+        $realEstate->type = $request->input('type');
+        $realEstate->save();
+        return redirect('/')->with('success_message', 'Ingatlan sikeresen frissítve');
 
     }
 

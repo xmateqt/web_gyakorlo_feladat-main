@@ -9,6 +9,13 @@ Created at: 2021.03.24.
 @section('content')
     <div class="container">
         <div class="jumbotron">
+
+            @if(session('success_message'))
+                <div class="alert alert-success">
+                    {{ session('success_message') }}
+                </div>
+            @endif
+
             <h3 class="text-center mb-5">Ingatlanok listája</h3>
 
             @if(count($realEstateList) > 0) 
@@ -30,7 +37,7 @@ Created at: 2021.03.24.
 
 
                     </div>
-                    <a href="/update-real-estate/{{$realEstate->id}}" class="btn btn-outline-primary">Módosítás</a>
+                  <!--  <a href="/update-real-estate/{{$realEstate->id}}" class="btn btn-outline-primary">Módosítás</a> -->
 
                     <hr>
                 @endforeach
