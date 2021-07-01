@@ -63,6 +63,31 @@ class HomeController extends Controller
 
     }
 
+    public function newRealEstate() {
+        return view('realestate.new');
+    }
+
+    public function addRealEstate(Request $request) {
+
+        $validator = new Validator($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+            'address' => 'required',
+            'price' => 'required',
+            'type' => 'required',
+        ]);
+
+        $realEstate = new RealEstate;
+        $realEstate->name = $request->input('name');
+        $realEstate->description = $request->input('description');
+        $realEstate->address = $request->input('address');
+        $realEstate->price = $request->input('price');
+        $realEstate->type = $request->input('type');
+        $realEstate->img_uri = "#";
+        $realEstate->save();
+        return redirect('/')->with('success_message', 'Ingatlan sikeresen hozzáadva');
+    }
+
     /**
      * @param $id
      * azonosito alapjan SOFT delete

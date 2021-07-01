@@ -73,7 +73,7 @@ Created at: 2021.03.24.
 
                 </form>
 
-                <a href="/" class="btn btn-outline-primary" role="button">Vissza</a>
+                <a href="/" class="btn btn-outline-danger" role="button">Vissza</a>
         </div>
     </div>
 @endsection

@@ -13,7 +13,7 @@
             <a class="nav-link" href="/">Ingatlanok listája</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Új ingatlan hozzáadása</a>
+            <a class="nav-link" href="/new-real-estate">Új ingatlan hozzáadása</a>
           </li>
         </ul>
       </div>

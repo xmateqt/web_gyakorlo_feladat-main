@@ -1,5 +1,8 @@
 # Gyakorló/beugró feladat
 
+v0.0.7
+Új ingatlan hozzáadása oldal és funkció hozzáadva, //todo - kép feltöltés
+
 v0.0.6
 Ingatlan módosítás funkció befejezve, validation még anomáliát okoz, success message hozzáadva
 
