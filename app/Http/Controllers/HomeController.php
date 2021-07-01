@@ -49,10 +49,6 @@ class HomeController extends Controller
             'image' => 'image|nullable|max:1999'
         ]);
 
-      /* if ($validator->fails()) {
-            return redirect('#')->withErrors($validator);
-        } */
-
         $realEstate = RealEstate::find($request->input('id'));
 
         if($request->hasFile('image')){

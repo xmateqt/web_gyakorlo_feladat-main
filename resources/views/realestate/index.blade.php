@@ -25,12 +25,12 @@ Created at: 2021.03.24.
 
                         
 
-                        <div class="col-8 card p-3 mt-3 mb-3">
+                        <div class="col-md-8 col-sm-12 col-xs-12 card p-3 mt-3 mb-3">
                             <h5 class="pb-3"><a href="/get-real-estate/{{$realEstate->id}}">{{$realEstate->name}}</a></h5>
                             <p>{{$realEstate->address}}, {{$realEstate->type}}</p>
                             <p>Ár: {{$realEstate->price}} Ft</p>
                         </div>
-                        <div class="col-4 card p-3 mt-3 mb-3 float-right d-flex flex-column">
+                        <div class="col-md-4 col-sm-12 col-xs-12 card p-3 mt-3 mb-3 float-right d-flex flex-column">
                             <img class="img-fluid justify-content-center" src={{$realEstate->img_uri}}>
                         </div>
 

@@ -1,6 +1,9 @@
 # Gyakorló/beugró feladat
 
-TODO: bootstrap igazítások, reszponzitás
+TODO: validációs tesztek
+
+v0.1.0
+Reszponzív bootstrap oszlopok, stilizált gombok
 
 v0.0.9
 Soft delete hozzáadva az ignatlanokhoz

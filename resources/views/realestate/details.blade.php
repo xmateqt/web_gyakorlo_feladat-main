@@ -13,20 +13,25 @@ Created at: 2021.03.24.
 
                     <div class="row">
 
-                        <div class="col-8">
-                            <h4 class="pb-3">Ingatlan neve: {{$realEstate->name}}</h5>
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <h4 class="pb-3">Ingatlan neve: {{$realEstate->name}}</h4>
                             <p>Ingatlan leírása: {{$realEstate->description}}</p>
                             <p>Ingatlan címe: {{$realEstate->address}}</p>
                             <p>Ingatlan típusa: {{$realEstate->type}}</p>
                             <p>Ingatlan ára: {{$realEstate->price}} Ft</p>
                         </div>
-                        <div class="col-4 float-right d-flex flex-column">
-                            <img class="img-fluid justify-content-center" src={{$realEstate->img_uri}}>
+                        <div class="col-md-4 col-sm-12 col-xs-12 float-right d-flex flex-column">
+                            <img class="img-fluid justify-content-center img-responsive" src={{$realEstate->img_uri}}>
                         </div>
                     </div>
 
                     <br><br>
 
+                    <hr>
+
+                    <div class="row col-8">
+                        <h5>Ingatlan szerkesztése</h5><br><br>
+                    </div>
 
                 <form method="POST" action="{{url('update-real-estate')}}" id="update-real-estate" enctype="multipart/form-data">
                     @csrf
@@ -78,15 +83,16 @@ Created at: 2021.03.24.
                             <input type="file" class="custom-file-control" id="image" name="image"><br>
                         </div>
                     </div>
-                    <input type="submit" value="Mentés" class="btn btn-outline-primary"><br><br>
+                    <input type="submit" value="Mentés" class="btn btn-outline-success"><br><br>
 
                 </form>
-                <a href="{{url('delete-real-estate/'.$realEstate->id)}}" id="delete-real-estate" class="btn btn-outline-danger">Törlés</a>
+             
+                <a href="{{url('delete-real-estate/'.$realEstate->id)}}" id="delete-real-estate" class="btn btn-outline-danger float-right">Törlés</a>
                   
               
 
 
-                <a href="/" class="btn btn-outline-danger" role="button">Vissza</a>
+                <a href="/" class="btn btn-outline-primary" role="button">Vissza</a>
         </div>
     </div>
 @endsection
