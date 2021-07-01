@@ -21,6 +21,7 @@ class CreateRealEstateTable extends Migration
             $table->string('img_uri');
             $table->double('price');
             $table->string('type');
+            $table->softDeletes();
             $table->timestamps();
         });
 

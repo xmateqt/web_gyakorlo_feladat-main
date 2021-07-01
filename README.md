@@ -1,5 +1,10 @@
 # Gyakorló/beugró feladat
 
+TODO: bootstrap igazítások, reszponzitás
+
+v0.0.9
+Soft delete hozzáadva az ignatlanokhoz
+
 v0.0.8
 Képfeltöltés és képvalidációk beállítása új ingatlanhoz és módosításhoz
 

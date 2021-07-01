@@ -120,9 +120,11 @@ class HomeController extends Controller
      * @param $id
      * azonosito alapjan SOFT delete
      */
-    public function deleteRealEstate($id)
-    {
+    public function deleteRealEstate($id){
 
+        $realEstate = RealEstate::find($id);
+        $realEstate->delete();
+        return redirect('/')->with('success_message', 'Ingatlan törlése sikeres volt');
     }
 
     public static function listRealEstateTypes() {

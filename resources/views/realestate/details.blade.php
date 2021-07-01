@@ -81,6 +81,10 @@ Created at: 2021.03.24.
                     <input type="submit" value="Mentés" class="btn btn-outline-primary"><br><br>
 
                 </form>
+                <a href="{{url('delete-real-estate/'.$realEstate->id)}}" id="delete-real-estate" class="btn btn-outline-danger">Törlés</a>
+                  
+              
+
 
                 <a href="/" class="btn btn-outline-danger" role="button">Vissza</a>
         </div>
